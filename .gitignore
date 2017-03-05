@@ -1,8 +1,10 @@
+<<<<<<< HEAD
 ### Laravel template
 vendor/
+
 node_modules/
 npm-debug.log
-
+.idea/
 # Laravel 5 & Lumen specific
 public/storage
 public/hot
