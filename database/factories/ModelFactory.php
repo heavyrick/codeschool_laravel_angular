@@ -12,7 +12,7 @@
 */
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
-$factory->define(CsProjeto\User::class, function (Faker\Generator $faker) {
+$factory->define(CsProjeto\Entities\User::class, function (Faker\Generator $faker) {
     static $password;
 
     return [
@@ -23,7 +23,7 @@ $factory->define(CsProjeto\User::class, function (Faker\Generator $faker) {
     ];
 });
 
-$factory->define(CsProjeto\Client::class, function (Faker\Generator $faker) {
+$factory->define(CsProjeto\Entities\Client::class, function (Faker\Generator $faker) {
     return [
         'name' => $faker->name,
         'responsible' => $faker->name,

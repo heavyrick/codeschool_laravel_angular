@@ -2,33 +2,33 @@
 
 namespace CsProjeto\Http\Controllers;
 
-use CsProjeto\Repositories\ClientRepository;
-use CsProjeto\Services\ClientService;
+use CsProjeto\Repositories\ProjectRepository;
+use CsProjeto\Services\ProjectService;
 use Illuminate\Http\Request;
 
 /**
- * Class ClientController
+ * Class ProjectController
  * @package CsProjeto\Http\Controllers
  */
-class ClientController extends Controller
+class ProjectController extends Controller
 {
 
     /**
-     * @var ClientRepository
+     * @var ProjectRepository
      */
     private $repository;
 
     /**
-     * @var ClientService
+     * @var ProjectService
      */
     private $service;
 
     /**
-     * ClientController constructor.
-     * @param ClientRepository $repository
-     * @param ClientService $service
+     * ProjectController constructor.
+     * @param ProjectRepository $repository
+     * @param ProjectService $service
      */
-    public function __construct(ClientRepository $repository, ClientService $service)
+    public function __construct(ProjectRepository $repository, ProjectService $service)
     {
         $this->repository = $repository;
         $this->service = $service;
@@ -50,7 +50,7 @@ class ClientController extends Controller
      */
     public function show($id)
     {
-        return $this->repository->find($id);
+        return $this->repository->with('client')->with('user')->find($id);
     }
 
     /**

@@ -168,6 +168,8 @@ return [
          */
         Laravel\Tinker\TinkerServiceProvider::class,
 
+        Prettus\Repository\Providers\RepositoryServiceProvider::class,
+
         /*
          * Application Service Providers...
          */
@@ -176,6 +178,7 @@ return [
         // CsProjeto\Providers\BroadcastServiceProvider::class,
         CsProjeto\Providers\EventServiceProvider::class,
         CsProjeto\Providers\RouteServiceProvider::class,
+        CsProjeto\Providers\CsProjetoRepositoryProvider::class
 
     ],
 
@@ -225,7 +228,6 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-
     ],
 
 ];
