@@ -33,3 +33,15 @@ $factory->define(CsProjeto\Entities\Client::class, function (Faker\Generator $fa
         'obs' => $faker->sentence
     ];
 });
+
+$factory->define(CsProjeto\Entities\Project::class, function (Faker\Generator $faker) {
+    return [
+        'name' => $faker->name,
+        'client_id' => $faker->numberBetween($min = 1, $max = 10),
+        'owner_id' => $faker->numberBetween($min = 1, $max = 10),
+        'description' => $faker->sentence,
+        'progress' => $faker->word,
+        'status' => $faker->word,
+        'due_date' => $faker->date($format = 'Y-m-d', $max = 'now')
+    ];
+});
